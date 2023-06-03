@@ -28,7 +28,7 @@ $(document).ready(function(){
                 {
                    
                    $('#modal-abrir').modal('hide');
-                   carregaOS();
+                   window.location.reload();
                    
                 }else if(json.status == 'erro'){
                    

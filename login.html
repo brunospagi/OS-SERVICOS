@@ -1,41 +1,98 @@
 <!DOCTYPE html>
 
 <html>
-    <head>
-        <title>OService</title>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="css/bootstrap.css" />
-        <link rel="stylesheet" href="css/login.css" />
-        
-        <script src="js/jquery-3.1.0.min.js"></script>
-        <script src="js/bootstrap.js"></script>                      
-        <script src="js/login.js"></script>                      
-        
-    </head>
-    <body>
-        <div class="container">
-            <div class="row">
-                <div class="col-sm-6 col-md-4 col-md-offset-4">
-                    <h1 class="text-center login-title">Logar no sistema</h1>
-                    <div class="account-wall">
-                        <img class="profile-img" src="https://lh5.googleusercontent.com/-b0-k99FZlyE/AAAAAAAAAAI/AAAAAAAAAAA/eu7opA4byxI/photo.jpg?sz=120"
-                             alt="">
-                        <form id="form-login" class="form-signin" action="teste.php">
-                            
-                         <div id="alerta-form" class="alert alert-danger hide" role="alert"></div>    
-                         
-                            <input id="login" type="text" class="form-control" placeholder="Email" required autofocus>
-                            <input id="senha" type="password" class="form-control" placeholder="Password" required>
-                            <button class="btn btn-lg btn-primary btn-block" type="submit">Entrar</button>
-                            <label class="checkbox pull-left col-md-offset-1">
-                                <input type="checkbox" value="remember-me">
-                                Lembrar por uma semana
-                            </label>                             
-                        </form>
-                    </div>                    
+
+<head>
+    <title>OService</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/bootstrap.css" />
+    <link rel="stylesheet" href="css/login.css" />
+
+    <script src="js/jquery-3.1.0.min.js"></script>
+    <script src="js/bootstrap.js"></script>
+    <script src="js/login.js"></script>
+
+</head>
+
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-6 col-md-4 col-md-offset-4">
+                <h1 class="text-center login-title">Logar no sistema</h1>
+                <div class="account-wall">
+                    <img class="profile-img"
+                        src="https://lh5.googleusercontent.com/-b0-k99FZlyE/AAAAAAAAAAI/AAAAAAAAAAA/eu7opA4byxI/photo.jpg?sz=120"
+                        alt="">
+                    <form id="form-login" class="form-signin" action="teste.php">
+
+                        <div id="alerta-form" class="alert alert-danger hide" role="alert"></div>
+
+                        <input id="login" type="text" class="form-control" placeholder="Email" required autofocus>
+                        <input id="senha" type="password" class="form-control" placeholder="Password" required>
+                        <button class="btn btn-lg btn-primary btn-block" type="submit">Entrar</button>
+                        <label class="checkbox pull-left col-md-offset-1">
+                            <input type="checkbox" value="remember-me">
+                            Lembrar por uma semana
+                            <a href="#" data-toggle="modal" data-target="#modal-cadastro">Crie sua Conta</a>
+                        </label>
+                    </form>
                 </div>
             </div>
         </div>
-    </body>
+        <div id="modal-cadastro" class="modal fade" tabindex="-1" role="dialog">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+                                aria-hidden="true">&times;</span></button>
+                        <h4 class="modal-title">Crie sua Conta</h4>
+                    </div>
+                    <div class="modal-body">
+
+                        <div id="alerta-form-cadastro" class="alert alert-danger hide" role="alert">Ocorreu um erro ao
+                            gravar</div>
+
+                        <form id="form-criar-cadastro" class="form-horizontal">
+                            <fieldset>
+                                <div class="form-group">
+                                    <label class="col-md-3 control-label" for="solicitação">Nome:</label>
+                                    <div class="col-md-8">
+                                        <input id="usuario-nome" type="text" class="form-control"
+                                            placeholder="Ex : João Luiz" required autofocus>
+                                        <br>
+                                    </div>
+                                    <label class="col-md-3 control-label" for="solicitação">Email:</label>
+                                    <div class="col-md-8">
+                                        <input id="usuario-email" type="text" class="form-control"
+                                            placeholder="Email" required autofocus>
+                                        <br>
+                                    </div>
+                                    <label class="col-md-3 control-label" for="solicitação">Senha:</label>
+                                    <div class="col-md-8">
+                                        <input id="usuario-senha" type="password" class="form-control"
+                                            placeholder="Digite Sua Senha" minlength="8" required>
+                                        <br>
+                                    </div>
+                                    <label class="col-md-3 control-label" for="solicitação">Confirme a Senha:</label>
+                                    <div class="col-md-8">
+                                        <input id="usuario-senha-valida" type="password" class="form-control"
+                                            placeholder="Confirme Sua Senha" minlength="8" required autofocus>
+                                    </div>
+                                </div>
+
+                            </fieldset>
+                        </form>
+
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
+                        <button id="btn-criar-cadastro" class="btn btn-success">Enviar Solicitação</button>
+                    </div>
+                </div><!-- /.modal-content -->
+            </div><!-- /.modal-dialog -->
+        </div><!-- /.modal -->
+    </div>
+</body>
+
 </html>
